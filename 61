@@ -1,0 +1,25 @@
+#首尾相连，再找到位置断开循环.将尾部向前数第K个元素作为头，原来的头接到原来的尾上https://leetcode.cn/problems/rotate-list/
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+    #遍历到none，就从0开始计数（右开空间），如果遍历到最后有效位，就从1开始（右闭空间）
+        if head is None or head.next is None: return head
+        start, end, len = head, None, 0
+        while head:
+            end = head
+            head = head.next
+            len += 1
+        #首尾连接
+        end.next = start
+        #计算有效移动步数
+        pos = len - k % len
+        while pos > 1:
+            start = start.next
+            pos -= 1
+        ret = start.next
+        start.next = None
+        return ret
