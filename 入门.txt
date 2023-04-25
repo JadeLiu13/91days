@@ -1,0 +1,154 @@
+刘璇@MSI MINGW64 /d/course/Git
+$ git config --global user.name "jade"
+
+刘璇@MSI MINGW64 /d/course/Git
+$ git config --global user.email "18742055687@163.com"
+
+刘璇@MSI MINGW64 /d/course/Git
+$ git init
+Initialized empty Git repository in D:/course/Git/.git/
+
+刘璇@MSI MINGW64 /d/course/Git (master)
+$ git remote add github git@github.com:JadeLiu13/team-learning-cv.git
+
+刘璇@MSI MINGW64 /d/course/Git (master)
+$ git remote -v
+github  git@github.com:JadeLiu13/team-learning-cv.git (fetch)
+github  git@github.com:JadeLiu13/team-learning-cv.git (push)
+
+刘璇@MSI MINGW64 /d/course/Git (master)
+$ ssh-keygen -t rsa -C "18742055687@163.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/Jade/.ssh/id_rsa):
+Created directory '/c/Users/Jade/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/Jade/.ssh/id_rsa
+Your public key has been saved in /c/Users/Jade/.ssh/id_rsa.pub
+The key fingerprint is:
+
+
+
+刘璇@MSI MINGW64 /d/course/Git (master)
+$ ssh -T git@github.com
+The authenticity of host 'github.com (140.82.113.4)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+Hi JadeLiu13! You've successfully authenticated, but GitHub does not provide shell access.
+
+刘璇@MSI MINGW64 /d/course/Git (master)
+$ git add win10下Git的配置及使用.md
+fatal: pathspec 'win10下Git的配置及使用.md' did not match any files
+
+刘璇@MSI MINGW64 /d/course/Git (master)
+$ git add win10下Git的配置及使用.md
+
+刘璇@MSI MINGW64 /d/course/Git (master)
+$ git commit -m "01点15第一版"
+[master (root-commit) 281cef6] 01点15第一版
+ 1 file changed, 1 insertion(+)
+ create mode 100644 "win10\344\270\213Git\347\232\204\351\205\215\347\275\256\345\217\212\344\275\277\347\224\250.md"
+
+刘璇@MSI MINGW64 /d/course/Git (master)
+$ git push -u github master
+To github.com:JadeLiu13/team-learning-cv.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'github.com:JadeLiu13/team-learning-cv.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+刘璇@MSI MINGW64 /d/course/Git (master)
+$ git push -u jade_git master
+fatal: 'jade_git' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+刘璇@MSI MINGW64 /d/course/Git (master)
+$ git clone github git@github.com:JadeLiu13/team-learning-cv.git
+fatal: repository 'github' does not exist
+
+刘璇@MSI MINGW64 /d/course/Git (master)
+$ git clone git@github.com:JadeLiu13/team-learning-cv.git
+Cloning into 'team-learning-cv'...
+remote: Enumerating objects: 344, done.
+remote: Counting objects: 100% (33/33), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 344 (delta 31), reused 28 (delta 28), pack-reused 311
+Receiving objects: 100% (344/344), 18.82 MiB | 96.00 KiB/s, done.
+Resolving deltas: 100% (106/106), done.
+
+刘璇@MSI MINGW64 /d/course/Git (master)
+$ git remote add origin git@github.com:JadeLiu13/91days.git
+
+刘璇@MSI MINGW64 /d/course/Git (master)
+$ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 258 bytes | 258.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/JadeLiu13/91days/pull/new/master
+remote:
+To github.com:JadeLiu13/91days.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+刘璇@MSI MINGW64 /d/course/Git (master)
+$ touch README.md
+
+刘璇@MSI MINGW64 /d/course/Git (master)
+$ git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+
+刘璇@MSI MINGW64 /d/course/Git (master)
+$ git add .
+warning: in the working copy of 'private key.ppk', LF will be replaced by CRLF the next time Git touches it
+warning: adding embedded git repository: team-learning-cv
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint:   git submodule add <url> team-learning-cv
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint:   git rm --cached team-learning-cv
+hint:
+hint: See "git help submodule" for more information.
+
+刘璇@MSI MINGW64 /d/course/Git (master)
+$ git rm --cached team-learning-cv
+error: the following file has staged content different from both the
+file and the HEAD:
+    team-learning-cv
+(use -f to force removal)
+
+刘璇@MSI MINGW64 /d/course/Git (master)
+$ git rm --cached team-learning-cv
+error: the following file has staged content different from both the
+file and the HEAD:
+    team-learning-cv
+(use -f to force removal)
+
+刘璇@MSI MINGW64 /d/course/Git (master)
+$ git init
+Reinitialized existing Git repository in D:/course/Git/.git/
+
+刘璇@MSI MINGW64 /d/course/Git (master)
+$ git push -u origin master
+
